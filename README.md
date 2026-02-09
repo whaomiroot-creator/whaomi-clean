@@ -1,43 +1,72 @@
-# 🚀 Whaomi-Clean v3.2 - Ultimate Edition
+# 🚀 Whaomi-Clean v3.3 - Ultimate Edition Plus
+
+![Banner Whaomi-Clean v3.3](banner.jpg)
 
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-3.2-blue)
+![Version](https://img.shields.io/badge/Version-3.3-blue)
 
-O **Whaomi-Clean** é uma ferramenta definitiva de otimização, manutenção e privacidade para Windows 10 e 11. Desenvolvido para ser leve, rápido e transparente, o script reúne o poder do CMD, PowerShell e Winget em uma única interface interativa e profissional.
 
-## 🌟 Principais Funcionalidades
+🌟 🚀 Novidades da v3.3 (Lançamento Fevereiro 2026)
+✨ Novas Funcionalidades Exclusivas
+🗂️ Sistema de Logs Automático - Todas as ações registradas com data/hora em %temp%\WhaomiClean_*.log
 
-### 🛠️ Manutenção e Reparo Avançado
-* **Limpeza Ultra:** Além de temporários e lixeira, remove **Logs de Eventos** do Windows e limpa a base do WinSxS (Windows Update).
-* **Reparo de Sistema:** Executa SFC e DISM Restore Health para corrigir arquivos corrompidos.
-* **Backup de Segurança:** Cria pontos de restauração, faz backup de drivers e do registro do Windows com um clique.
+⚡ Limpeza Agressiva (2B) - Prefetch, Minidumps, cache de navegadores, INetCache
 
-### ⚡ Desempenho e Gaming (Turbo Mode)
-* **RAM Cleaner:** Força a limpeza do cache da memória RAM para liberar espaço imediato.
-* **Gamer Mode:** Otimiza serviços de segundo plano (como spooler de impressão) e ativa o plano de energia oculto de **Desempenho Máximo**.
-* **Otimização de Disco:** Executa comando TRIM em SSDs e desfragmentação inteligente em HDDs via PnPUtil.
+📱 Debloat em 3 Níveis - Leve (básico), Médio (essencial), Agressivo (máximo)
 
-### 🛡️ Privacidade e Debloat
-* **Anti-Spy:** Desativa telemetria, rastreamento da Microsoft e serviços de coleta de dados.
-* **Debloat Seletivo:** Remove aplicativos nativos inúteis (Clima, Dicas, Notícias) que rodam em segundo plano.
+🎮 Gamer Mode Turbo - Desativa Game DVR, Xbox Game Bar, captura em 2º plano
 
-### 📦 Utilitários e Hardware
-* **Instalador Modular (Winget):** Menu interativo para você escolher quais apps instalar (Chrome, Discord, Steam, VS Code, etc).
-* **Windows Key Recovery:** Recupera a chave original (Product Key) gravada na BIOS/Firmware e no Registro.
-* **Saúde do Sistema:** Verifica status S.M.A.R.T do SSD/HD e gera relatórios detalhados de saúde da bateria para notebooks.
+🔄 Atualizar Apps (7B) - winget upgrade --all com uma opção
 
-## 🔄 Sistema de Auto-Update
-O Whaomi-Clean possui inteligência de versão. Ao iniciar, ele consulta o repositório oficial. Se uma versão nova (como a v3.3) for lançada, o script notificará você e oferecerá o link direto para atualização, garantindo que você sempre tenha as ferramentas mais seguras.
+🛠️ Manutenção Avançada (10) - Backup de perfil via robocopy + limpeza de startup/thumbnails
 
-## 🚀 Como Usar
+📊 Visualizador de Logs (11) - Histórico completo das operações
 
-1. Baixe o arquivo `whaomi-clean.bat` na aba [Releases](../../releases).
-2. Clique com o botão direito no arquivo e selecione **"Executar como Administrador"**.
-3. **Dica:** Utilize a opção **[1]** para criar um **Ponto de Restauração** antes de aplicar otimizações profundas.
+🧠 Detecção Inteligente - Valida Winget e versão do Windows automaticamente
 
-## ⚠️ Isenção de Responsabilidade
-Este projeto é open-source e utiliza comandos nativos do Windows. Embora seja testado, alterações no sistema devem ser feitas com cautela. O autor não se responsabiliza por eventuais problemas. O uso da opção de **Ponto de Restauração** é altamente recomendado.
+📈 Funcionalidades Mantidas e Melhoradas
+text
+🛡️  Backup Completo (HKLM + HKCU + Drivers + Ponto de Restauração)
+🧹  Limpeza Padrão (Temp + Lixeira + WinSxS + Logs de Eventos)
+🔧  Reparo (SFC + DISM + CHKDSK agendado)
+🛑  Anti-Telemetria (DiagTrack + doSvc + políticas de privacidade)
+📦  Instalador Winget (12 apps + validação)
+🌐  Reset de Rede (DNS + Winsock + TCP/IP)
+💻  Hardware (Key + SMART + Bateria + Especificações)
+🛠️ Funcionalidades Técnicas Avançadas
+🔒 Sistema de Segurança Multi-Camada
+text
+✅ Validação obrigatória de Administrador
+✅ Confirmações antes de ações agressivas
+✅ Logs detalhados com timestamp
+✅ Backup automático de registro (HKLM + HKCU)
+✅ Ponto de Restauração automático
+⚙️ Otimizações de Desempenho
+text
+🎯 Gamer Mode: Desativa Game DVR, Xbox, Captura
+⚡ Serviços otimizados: Spooler, WSearch (demand start)
+🔋 Plano de Energia: Desempenho Máximo oculto
+🎮 Prioridade GPU para jogos via GameConfigStore
+🔄 Sistema de Auto-Update Inteligente
+Ao iniciar, o Whaomi-Clean consulta o repositório oficial. Se uma versão v3.4 for lançada, você será notificado automaticamente com link direto para download. Sempre atualizado, sempre seguro!
 
----
-**Desenvolvido por [whaomiroot-creator](https://github.com/whaomiroot-creator)**
+🚀 Como Usar (3 Passos)
+bash
+1. 📥 Baixe Whaomi-Clean-v3.3.bat (aba Releases)
+2. 🛡️ Clique Direito → "Executar como Administrador"
+3. 🎯 **RECOMENDADO:** Use [1] Backup antes de otimizações
+📱 Menu Completo v3.3
+text
+[1]  BACKUP          [6]  DEBLOAT (3 níveis)
+[2]  LIMPEZA         [7]  INSTALADOR (12 apps)
+[2B] LIMPEZA AGRESSIVA [7B] ATUALIZAR APPS
+[3]  REPARO          [8]  REDE
+[4]  PRIVACIDADE     [9]  SISTEMA
+[5]  GAMER MODE     [10] MANUTENÇÃO
+                 [11] LOGS
+⚠️ Isenção de Responsabilidade
+Ferramenta 100% open-source usando apenas comandos nativos do Windows. Testada extensivamente em Windows 10/11. Sempre crie ponto de restauração (opção 1) antes de ações agressivas. O autor não se responsabiliza por uso indevido.
+
+👨‍💻 Desenvolvido por whaomiroot-creator
+⭐ Curtiu? Deixe uma ⭐ no GitHub!
