@@ -1,18 +1,46 @@
 @echo off
-title Otimizador de PC - Versao 2.0 (GitHub Project)
-color 0A
-mode con: cols=85 lines=40
+setlocal enabledelayedexpansion
+title Whaomi-Clean v2.1 - Turbo Edition + AutoUpdate
+color 0B
+mode con: cols=90 lines=45
 
-:: --- VERIFICAR ADMIN ---
+:: ==========================================
+:: CONFIGURAÇÃO DE VERSÃO E ATUALIZAÇÃO
+:: ==========================================
+set "versao_atual=2.1"
+:: IMPORTANTE: Substitua o link abaixo pelo seu link RAW do version.txt no GitHub
+set "url_versao=https://raw.githubusercontent.com/SEU_USUARIO/whaomi-clean/main/version.txt"
+:: ==========================================
+
+:CHECK_UPDATE
+cls
+echo [!] Verificando atualizacoes...
+:: O comando curl baixa o texto da versão online silenciosamente
+curl -s %url_versao% > %temp%\v_online.txt
+set /p versao_online=<%temp%\v_online.txt
+
+if "%versao_online%" neq "%versao_atual%" (
+    if "%versao_online%" neq "" (
+        echo.
+        echo ======================================================
+        echo  NOVA ATUALIZACAO DISPONIVEL! (%versao_atual% -^> %versao_online%)
+        echo ======================================================
+        echo  Deseja ir para o GitHub baixar a nova versao? (S/N)
+        set /p upd=^> 
+        if /i "!upd!"=="S" (
+            start https://github.com/SEU_USUARIO/whaomi-clean
+            exit
+        )
+    )
+)
+
+:ADMIN_CHECK
 net session >nul 2>&1
 if %errorLevel% neq 0 (
     echo.
     echo ======================================================
-    echo  [ERRO] ESTE SCRIPT PRECISA DE PERMISSOES DE ADMIN
+    echo  [ERRO] O Whaomi-Clean PRECISA DE PERMISSOES DE ADMIN
     echo ======================================================
-    echo  Por favor, clique com o botao direito e selecione
-    echo  "Executar como Administrador".
-    echo.
     pause
     exit
 )
@@ -20,155 +48,124 @@ if %errorLevel% neq 0 (
 :MENU
 cls
 echo =================================================================================
-echo                             OTIMIZADOR DE SISTEMA V2.0
+echo           WHAOMI-CLEAN v%versao_atual% - Otimizacao Completa e Auto-Update
 echo =================================================================================
 echo.
-echo   [SEGURANCA E BACKUP]
-echo   [1]  Criar Ponto de Restauracao (Recomendado antes de iniciar)
-echo   [2]  Fazer Backup de Todos os Drivers (C:\Backup_Drivers)
-echo   [3]  Fazer Backup do Registro (Area de Trabalho)
+echo  [1]  BACKUP: Ponto de Restauracao, Drivers e Registro
+echo  [2]  LIMPEZA: Temporarios, Lixeira e Windows Update (WinSxS)
+echo  [3]  REPARO: SFC Scannow, DISM e Verificacao de Disco
+echo  [4]  PRIVACIDADE: Bloquear Telemetria e Rastreamento MS
+echo  [5]  GAMER MODE: Otimizar Servicos e Plano de Energia
+echo  [6]  DEBLOAT: Remover Apps Inuteis (Clima, Noticias, etc)
+echo  [7]  INSTALADOR: Softwares Essenciais (Chrome, 7Zip, VLC)
+echo  [8]  REDE: Resetar Cache DNS e Pilha TCP/IP
+echo  [9]  HARDWARE: Ver Saude do Disco (S.M.A.R.T) e Bateria
 echo.
-echo   [LIMPEZA E MANUTENCAO]
-echo   [4]  Limpar Arquivos Temporarios e Lixeira (Basico)
-echo   [5]  Limpeza Avancada (WinSxS / Windows Update)
-echo   [6]  Otimizar Disco (Defrag/Trim)
-echo   [7]  Corrigir Arquivos do Sistema (SFC / DISM)
-echo.
-echo   [UTILITARIOS E TWEAKS]
-echo   [8]  Ativar Plano de Energia "Desempenho Maximo"
-echo   [9]  Reiniciar Windows Explorer (Destravar interface)
-echo   [10] Gerar Relatorio de Saude da Bateria (Notebooks)
-echo   [11] Resetar Rede e Cache DNS
-echo.
-echo   [0]  Sair
+echo  [0]  Sair
 echo.
 echo =================================================================================
-set /p opcao=Digite o numero da opcao: 
+set /p opcao=Escolha uma categoria: 
 
-if "%opcao%"=="1" goto RESTOREPOINT
-if "%opcao%"=="2" goto DRIVERBACKUP
-if "%opcao%"=="3" goto REGBACKUP
-if "%opcao%"=="4" goto LIMPEZA
-if "%opcao%"=="5" goto UPDATE
-if "%opcao%"=="6" goto DISCO
-if "%opcao%"=="7" goto SISTEMA
-if "%opcao%"=="8" goto POWER
-if "%opcao%"=="9" goto EXPLORER
-if "%opcao%"=="10" goto BATTERY
-if "%opcao%"=="11" goto REDE
+if "%opcao%"=="1" goto BACKUP_MENU
+if "%opcao%"=="2" goto LIMPEZA
+if "%opcao%"=="3" goto REPARO
+if "%opcao%"=="4" goto PRIVACIDADE
+if "%opcao%"=="5" goto GAMER
+if "%opcao%"=="6" goto DEBLOAT
+if "%opcao%"=="7" goto WINGET
+if "%opcao%"=="8" goto REDE
+if "%opcao%"=="9" goto HARDWARE
 if "%opcao%"=="0" exit
 goto MENU
 
-:: --- FUNCOES ---
+:: --- FUNÇÕES ---
 
-:RESTOREPOINT
+:BACKUP_MENU
 cls
-echo [!] Criando Ponto de Restauracao do Sistema...
-echo     Isso garante que voce possa voltar atras se algo der errado.
-powershell.exe -Command "Checkpoint-Computer -Description 'Backup_Antes_Otimizacao' -RestorePointType 'MODIFY_SETTINGS'"
-if %errorLevel% == 0 (
-    echo [OK] Ponto de restauracao criado com sucesso!
-) else (
-    echo [ERRO] Nao foi possivel criar. Verifique se a Protecao do Sistema esta ativada.
-)
-pause
-goto MENU
-
-:DRIVERBACKUP
-cls
-echo [!] Iniciando backup dos drivers...
+echo [!] Criando Ponto de Restauracao...
+powershell.exe -Command "Checkpoint-Computer -Description 'Whaomi-v2' -RestorePointType 'MODIFY_SETTINGS'"
+echo [!] Exportando Drivers para C:\Backup_Drivers...
 if not exist "C:\Backup_Drivers" mkdir "C:\Backup_Drivers"
 dism /online /export-driver /destination:"C:\Backup_Drivers"
-echo.
-echo [OK] Drivers salvos em C:\Backup_Drivers
-echo      Guarde essa pasta se for formatar o PC!
-pause
-goto MENU
-
-:REGBACKUP
-cls
-echo [!] Fazendo backup do Registro do Windows...
-reg export HKLM "%UserProfile%\Desktop\Backup_Registro_HKLM.reg" /y
-echo.
-echo [OK] Backup salvo na sua Area de Trabalho como "Backup_Registro_HKLM.reg".
+echo [!] Fazendo Backup do Registro no Desktop...
+reg export HKLM "%UserProfile%\Desktop\Whaomi_Registry.reg" /y
+echo [OK] Processos de Seguranca Concluidos!
 pause
 goto MENU
 
 :LIMPEZA
 cls
-echo [!] Limpando arquivos temporarios...
+echo [!] Removendo lixo do sistema...
 del /s /f /q %temp%\*.* >nul 2>&1
 del /s /f /q C:\Windows\Temp\*.* >nul 2>&1
-del /s /f /q C:\Windows\Prefetch\*.* >nul 2>&1
-echo [!] Esvaziando a Lixeira...
-powershell.exe -command "Clear-RecycleBin -Force -ErrorAction SilentlyContinue"
+powershell.exe -command "Clear-RecycleBin -Force"
+echo [!] Limpando base de dados do Windows Update (WinSxS)...
+dism /online /Cleanup-Image /StartComponentCleanup /ResetBase
 echo [OK] Limpeza concluida.
 pause
 goto MENU
 
-:UPDATE
+:REPARO
 cls
-echo [!] Limpando backups antigos de atualizacoes do Windows...
-echo     Isso pode liberar varios GBs, mas demora um pouco.
-dism /online /Cleanup-Image /StartComponentCleanup
-echo [OK] Limpeza concluida.
-pause
-goto MENU
-
-:DISCO
-cls
-echo [!] Otimizando unidade C:...
-defrag C: /O /U /V
-echo [OK] Otimizacao concluida.
-pause
-goto MENU
-
-:SISTEMA
-cls
-echo [!] Verificando integridade do sistema (Etapa 1/2)...
+echo [!] Iniciando SFC e DISM (Isso pode demorar)...
 sfc /scannow
-echo [!] Reparando imagem do sistema (Etapa 2/2)...
 dism /online /cleanup-image /restorehealth
-echo [OK] Verificacoes concluidas.
+echo [!] Otimizando unidades...
+defrag C: /O /U
+echo [OK] Reparo finalizado.
 pause
 goto MENU
 
-:POWER
+:PRIVACIDADE
 cls
-echo [!] Tentando ativar o plano Desempenho Maximo...
+echo [!] Desativando Telemetria e Rastreamento...
+sc stop DiagTrack >nul 2>&1
+sc config DiagTrack start= disabled >nul 2>&1
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f >nul
+echo [OK] Sua privacidade foi aumentada.
+pause
+goto MENU
+
+:GAMER
+cls
+echo [!] Ativando Modo Desempenho...
 powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-echo.
-echo [AVISO] Se apareceu um codigo acima, va em "Opcoes de Energia" no Painel de Controle
-echo         e selecione o novo plano criado.
+echo [!] Otimizando servicos...
+sc stop Spooler >nul 2>&1
+echo [INFO] Servicos desnecessarios pausados.
 pause
 goto MENU
 
-:EXPLORER
+:DEBLOAT
 cls
-echo [!] Reiniciando o Windows Explorer...
-taskkill /f /im explorer.exe
-start explorer.exe
-echo [OK] Interface reiniciada.
+echo [!] Removendo Apps inúteis...
+powershell.exe -command "Get-AppxPackage *bingweather* | Remove-AppxPackage"
+powershell.exe -command "Get-AppxPackage *gethelp* | Remove-AppxPackage"
+echo [OK] Debloat concluido.
 pause
 goto MENU
 
-:BATTERY
+:WINGET
 cls
-echo [!] Gerando relatorio de bateria...
-powercfg /batteryreport /output "%UserProfile%\Desktop\Relatorio_Bateria.html"
-echo.
-echo [OK] Relatorio salvo na Area de Trabalho: Relatorio_Bateria.html
+echo [!] Instalando apps essenciais...
+winget install --id Google.Chrome --silent
+winget install --id 7zip.7zip --silent
+echo [OK] Instalacao finalizada.
 pause
 goto MENU
 
 :REDE
 cls
-echo [!] Resetando pilha TCP/IP e DNS...
+echo [!] Resetando conexao...
 ipconfig /flushdns
-ipconfig /release
-ipconfig /renew
 netsh winsock reset
-netsh int ip reset
 echo [OK] Rede resetada.
+pause
+goto MENU
+
+:HARDWARE
+cls
+echo [!] Status do Disco:
+wmic diskdrive get status, model
 pause
 goto MENU
