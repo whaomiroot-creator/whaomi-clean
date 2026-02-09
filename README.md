@@ -67,17 +67,5 @@ Sua ajuda é fundamental para manter o projeto vivo!
 <div align="center"> Desenvolvido por <b>whaomiroot-creator</b> com foco em performance e segurança.
 
 
-📅 <i>Versão 3.3 - Fevereiro 2026</i> </div>
+📅 Versão 3.3 - Fevereiro 2026
 
-
------
-
-### O que eu mudei para melhorar:
-
-1.  **Badges:** Adicionei selos visuais (License, OS, Version) que dão um ar de projeto sério.
-2.  **Tabelas:** Transformei a lista de funcionalidades em uma tabela para facilitar a leitura rápida.
-3.  **Blocos de Alerta:** Usei o recurso de "Tip/Note" do GitHub para destacar o Auto-Update e o Backup.
-4.  **Hierarquia:** Melhorei os títulos e o espaçamento para que o usuário encontre o botão de download e as instruções de uso imediatamente.
-5.  **Banner:** Ajustei o caminho da imagem para `banner.png` (conforme o nome do arquivo que você enviou).
-
-Deseja que eu personalize os links de download ou adicione alguma seção específica de com
