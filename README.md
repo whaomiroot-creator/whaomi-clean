@@ -10,9 +10,6 @@
 ![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-3.3-blue?style=for-the-badge)
 
-</div>
-
----
 
 ## 🌟 **🚀 Novidades da v3.3**
 
@@ -56,4 +53,3 @@ graph LR
 👨‍💻 Desenvolvido por whaomiroot-creator
 ⭐ Deixe sua ⭐ no GitHub!
 
-</div> ```
