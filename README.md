@@ -1,41 +1,43 @@
-# 🚀 Whaomi-Clean
+# 🚀 Whaomi-Clean v3.0 - Ultimate Edition
 
-**Whaomi-Clean** é uma ferramenta de otimização e manutenção de sistema *open-source* para Windows 10 e 11. Desenvolvido em Batch Script (.bat), ele combina comandos nativos do CMD e PowerShell para limpar, reparar e acelerar seu PC com segurança.
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen?style=for-the-badge)
 
-## 📋 Funcionalidades
+O **Whaomi-Clean** é uma ferramenta definitiva de otimização, manutenção e privacidade para Windows 10 e 11. Desenvolvido para ser leve, rápido e transparente, o script reúne o poder do CMD, PowerShell e Winget em uma única interface interativa.
 
-O script oferece um menu interativo com as seguintes opções:
+## 🌟 Principais Funcionalidades
 
-### 🛡️ Segurança & Backup
-* **Criar Ponto de Restauração:** Cria um checkpoint do sistema antes de alterações.
-* **Backup de Drivers:** Exporta todos os drivers de terceiros para uma pasta (ideal antes de formatar).
-* **Backup do Registro:** Salva uma cópia de segurança do `HKEY_LOCAL_MACHINE`.
+### 🛠️ Manutenção e Reparo
+* **Limpeza Profunda:** Remove arquivos temporários, cache do sistema e esvazia a lixeira.
+* **Reparo de Sistema:** Executa SFC e DISM para corrigir arquivos corrompidos.
+* **Windows Update Fix:** Reseta os componentes de atualização para resolver erros de download.
 
-### 🧹 Limpeza
-* **Arquivos Temporários:** Remove lixo do `%temp%`, `Windows\Temp` e `Prefetch`.
-* **Lixeira:** Esvazia a lixeira automaticamente via PowerShell.
-* **Windows Update:** Limpa backups antigos de atualizações (WinSxS) para liberar espaço.
+### ⚡ Desempenho e Gaming
+* **RAM Cleaner:** Limpa o cache da memória RAM em tempo real.
+* **Modo Gamer:** Otimiza serviços de segundo plano e ativa o plano de energia de **Desempenho Máximo**.
+* **Otimização de Disco:** Executa TRIM em SSDs e organiza HDDs para maior velocidade.
 
-### ⚡ Otimização
-* **Disco:** Executa o `TRIM` em SSDs ou Desfragmentação em HDDs.
-* **Sistema:** Verifica e repara arquivos corrompidos do Windows (`SFC` e `DISM`).
-* **Energia:** Ativa o plano de energia oculto "Desempenho Máximo".
-* **Rede:** Reseta o cache DNS e a pilha TCP/IP para resolver problemas de conexão.
+### 🛡️ Privacidade e Personalização
+* **Anti-Spy:** Desativa a telemetria da Microsoft e serviços de rastreamento.
+* **Debloat:** Remove aplicativos nativos inúteis (Bloatware) que consomem recursos.
+* **Dark/Light Mode:** Alterne o tema do Windows diretamente pelo script.
 
-## 📥 Como Baixar e Usar
+### 📦 Utilitários Extras
+* **Auto-Instalador Winget:** Instale Chrome, Steam, 7-Zip e Spotify de forma silenciosa.
+* **Diagnóstico de Hardware:** Verifique a saúde física (S.M.A.R.T) do seu SSD/HD e gere relatórios de bateria.
+* **Windows Key:** Visualize a chave de ativação original do seu sistema.
 
-1. Vá até a aba **[Releases](../../releases)** aqui no GitHub e baixe o arquivo `whaomi-clean.bat`.
-2. Ou clique no botão verde **Code** > **Download ZIP**.
-3. **Importante:** Clique com o botão direito no arquivo baixado e selecione:
-   > **Executar como Administrador**
+## 🔄 Sistema de Auto-Update
+O Whaomi-Clean possui um verificador de versão integrado. Sempre que uma nova atualização for lançada no repositório oficial, o script avisará você para que você tenha sempre as melhorias mais recentes.
 
-## ⚠️ Aviso Legal (Disclaimer)
+## 🚀 Como Usar
 
-Este software é fornecido "como está", sem garantia de qualquer tipo. Embora os comandos utilizados sejam nativos do Windows e seguros, o autor não se responsabiliza por quaisquer danos ou perda de dados. **Sempre faça um backup ou ponto de restauração antes de executar ferramentas de otimização.**
+1.  Faça o download do arquivo `whaomi-clean.bat`.
+2.  Clique com o botão direito no arquivo e selecione **"Executar como Administrador"**.
+3.  Recomendamos iniciar pela opção **[1]** para criar um **Ponto de Restauração** por segurança.
 
-## 🤝 Contribuição
-
-Sinta-se à vontade para fazer um **Fork** deste projeto, sugerir melhorias via **Issues** ou enviar um **Pull Request**.
+## ⚠️ Isenção de Responsabilidade
+Este projeto é open-source e utiliza comandos nativos do Windows. No entanto, alterações no sistema devem ser feitas com cautela. O autor não se responsabiliza por eventuais problemas decorrentes do uso inadequado da ferramenta. Sempre utilize a opção de **Ponto de Restauração** incluída no menu.
 
 ---
-*Desenvolvido com foco em simplicidade e eficiência.*
+**Desenvolvido por [whaomiroot-creator](https://github.com/whaomiroot-creator)**
