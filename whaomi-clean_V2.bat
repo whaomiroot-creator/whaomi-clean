@@ -9,7 +9,7 @@ mode con: cols=90 lines=45
 :: ==========================================
 set "versao_atual=2.1"
 :: IMPORTANTE: Substitua o link abaixo pelo seu link RAW do version.txt no GitHub
-set "url_versao=https://raw.githubusercontent.com/SEU_USUARIO/whaomi-clean/main/version.txt"
+set "url_versao=https://raw.githubusercontent.com/whaomiroot-creator/whaomi-clean/refs/heads/main/version.txt"
 :: ==========================================
 
 :CHECK_UPDATE
@@ -28,7 +28,7 @@ if "%versao_online%" neq "%versao_atual%" (
         echo  Deseja ir para o GitHub baixar a nova versao? (S/N)
         set /p upd=^> 
         if /i "!upd!"=="S" (
-            start https://github.com/SEU_USUARIO/whaomi-clean
+            start https://github.com/whaomiroot-creator/whaomi-clean
             exit
         )
     )
@@ -169,4 +169,5 @@ echo [!] Status do Disco:
 wmic diskdrive get status, model
 pause
 goto MENU
+
 
