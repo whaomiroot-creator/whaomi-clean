@@ -169,3 +169,4 @@ echo [!] Status do Disco:
 wmic diskdrive get status, model
 pause
 goto MENU
+
