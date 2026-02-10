@@ -1,116 +1,265 @@
 <div align="center">
   <img src="banner.png" alt="Whaomi-Clean v3.3 Banner" width="100%"/>
 
-  # 🚀 Whaomi-Clean v3.3 - Ultimate Edition Plus
-  
-  **A ferramenta definitiva de otimização, manutenção e privacidade para Windows 10 e 11.**
-  
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Windows](https://img.shields.io/badge/OS-Windows%2010%2F11-blue)](https://www.microsoft.com/windows)
-  [![Version](https://img.shields.io/badge/Version-3.3%20Stable-green)](https://github.com/whaomiroot-creator/whaomi-clean/releases)
-  [![Script](https://img.shields.io/badge/Script-Batch-lightgrey)](https://github.com/whaomiroot-creator/whaomi-clean)
+  <div align="center">
+
+# 🚀 Whaomi-Clean v3.3
+## Ultimate Edition Plus
+
+**A ferramenta definitiva de otimização, manutenção e privacidade para Windows**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Windows](https://img.shields.io/badge/OS-Windows%2010%2F11-0078D4?logo=windows)](https://www.microsoft.com/windows)
+[![Version](https://img.shields.io/badge/Version-3.3-success)](https://github.com/whaomiroot-creator/whaomi-clean/releases)
+[![Stars](https://img.shields.io/github/stars/whaomiroot-creator/whaomi-clean?style=social)](https://github.com/whaomiroot-creator/whaomi-clean/stargazers)
+
+[📥 Download](https://github.com/whaomiroot-creator/whaomi-clean/releases) • [📖 Documentação](#) • [🐛 Reportar Bug](https://github.com/whaomiroot-creator/whaomi-clean/issues) • [💬 Discussões](https://github.com/whaomiroot-creator/whaomi-clean/discussions)
+
 </div>
 
 ---
 
-## 🌟 O que há de novo na v3.3?
+## 🌟 Sobre o Projeto
 
-A versão **Ultimate Edition Plus** traz uma interface interativa profissional totalmente em Batch Script (.bat), combinando o poder do **CMD, PowerShell e Winget**. Agora com **11 categorias especializadas**, **animação de inicialização** e **sistema de logs automatizado**.
+**Whaomi-Clean v3.3 Ultimate Edition Plus** é uma ferramenta profissional desenvolvida em Batch Script que combina o poder do **CMD**, **PowerShell** e **Winget** para otimizar, limpar e proteger seu sistema Windows.
 
-### ✨ Destaques da Versão
+### ✨ Novidades da v3.3
 
-- 🎨 **Interface Profissional**: Animação de carregamento suave com transição de cores
-- 📊 **Barra de Progresso**: Feedback visual durante a inicialização (0-100%)
-- 🔄 **Auto-Update**: Verificação automática de novas versões no GitHub
-- 📝 **Sistema de Logs**: Histórico completo de todas as operações em `%temp%`
-- 🎯 **ASCII Art Moderno**: Design limpo e compatível com qualquer terminal Windows
 
 ---
 
-## 🛠️ Funcionalidades Principais
+## 🛠️ Funcionalidades
 
 <table>
-  <tr>
-    <th width="20%">Categoria</th>
-    <th width="80%">Descrição</th>
-  </tr>
-  <tr>
-    <td><b>🛡️ BACKUP</b></td>
-    <td>Criação automática de Pontos de Restauração + Exportação completa de Drivers (C:\Backup_Drivers) + Backup do Registro (HKLM/HKCU) salvo na Área de Trabalho.</td>
-  </tr>
-  <tr>
-    <td><b>🧹 LIMPEZA</b></td>
-    <td><b>Padrão:</b> Remove temporários (%temp%, Windows\Temp), limpa logs de eventos e executa limpeza WinSxS com DISM.<br><b>Agressiva [2B]:</b> Adiciona remoção de Prefetch, Minidumps, cache de navegadores e arquivos Recent.</td>
-  </tr>
-  <tr>
-    <td><b>🔧 REPARO</b></td>
-    <td>Execução completa de <code>SFC /scannow</code>, <code>DISM /RestoreHealth</code>, otimização de disco e agendamento de <code>CHKDSK /F /R</code> para próxima reinicialização.</td>
-  </tr>
-  <tr>
-    <td><b>🛡️ PRIVACIDADE</b></td>
-    <td>Desativa serviços de telemetria (DiagTrack, dmwappushservice), bloqueia coleta de dados via registro e remove sincronização invasiva do Windows.</td>
-  </tr>
-  <tr>
-    <td><b>🎮 GAMER MODE</b></td>
-    <td>Ativa plano de energia de alto desempenho oculto, desativa Game DVR/Xbox Game Bar, otimiza serviços em segundo plano (Spooler, Windows Search) e aumenta prioridade de GPU.</td>
-  </tr>
-  <tr>
-    <td><b>📱 DEBLOAT</b></td>
-    <td><b>3 Níveis de Intensidade:</b><br>• Leve (clima, notícias)<br>• Médio (+Maps, Fotos, Groove)<br>• Agressivo (+Xbox, Clipchamp, Feedback)</td>
-  </tr>
-  <tr>
-    <td><b>📦 INSTALADOR</b></td>
-    <td><b>12 Apps via Winget:</b> Chrome, Firefox, 7-Zip, VLC, Notepad++, Discord, Steam, Spotify, VS Code, WhatsApp, OBS Studio, Git.<br><b>[7B]</b> Atualiza todos os apps instalados automaticamente.</td>
-  </tr>
-  <tr>
-    <td><b>🌐 REDE</b></td>
-    <td>Reset completo: <code>ipconfig /flushdns</code>, <code>netsh winsock reset</code> e <code>netsh int ip reset</code> para resolver problemas de conexão.</td>
-  </tr>
-  <tr>
-    <td><b>💻 SISTEMA</b></td>
-    <td>Ferramentas de diagnóstico: recuperar chave do Windows (BIOS/Registro), verificar saúde do disco (S.M.A.R.T), gerar relatório de bateria, agendar CHKDSK e listar especificações completas.</td>
-  </tr>
-  <tr>
-    <td><b>🛠️ MANUTENÇÃO</b></td>
-    <td>Backup de perfil de usuário (Documentos/Desktop/Downloads), visualização de apps de inicialização e regeneração de cache de thumbnails.</td>
-  </tr>
-  <tr>
-    <td><b>📊 LOGS</b></td>
-    <td>Visualização do histórico de operações com timestamp completo de cada ação executada pelo script.</td>
-  </tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🛡️ Segurança & Backup
+- ✅ Pontos de Restauração automáticos
+- ✅ Exportação de Drivers
+- ✅ Backup completo do Registro
+
+### 🧹 Limpeza Inteligente
+- ✅ Modo Padrão e Agressivo
+- ✅ Limpeza de Cache e Temp
+- ✅ Remoção de bloatware
+
+### 🔧 Reparo do Sistema
+- ✅ SFC /scannow automático
+- ✅ DISM RestoreHealth
+- ✅ CHKDSK agendado
+
+</td>
+<td width="50%" valign="top">
+
+### 🎮 Modo Gamer
+- ✅ Plano de energia otimizado
+- ✅ Desativa Game DVR
+- ✅ Prioridade de GPU
+
+### 🛡️ Privacidade Total
+- ✅ Bloqueia telemetria
+- ✅ Desativa sincronização
+- ✅ Remove rastreadores
+
+### 📦 Gerenciador de Apps
+- ✅ 12 apps essenciais via Winget
+- ✅ Atualização automática
+- ✅ Instalação silenciosa
+
+</td>
+</tr>
 </table>
 
 ---
 
-## 📊 Menu Interativo
+## 📊 Interface do Menu
 
-O script apresenta um painel organizado e intuitivo:
+                                     v3.3 - ULTIMATE EDITION PLUS
 
-```text
-====================================================================================================================
-                                 #     # #     #    #     #####  #     # ###       #####  #       #######    #    #    # 
-                                 #     # #     #   # #   #     # ##   ##  #       #     # #       #         # #   ##   # 
-                                 #     # #     #  #   #  #     # # # # #  #       #       #       #        #   #  # #  # 
-                                 #  #  # ####### #     # #     # #  #  #  #  ###  #       #       #####   #     # #  # # 
-                                 #  #  # #     # ####### #     # #     #  #       #       #       #       ####### #   ## 
-                                  ## ##  #     # #     # #     # #     #  #       #     # #       #       #     # #    # 
-                                   ###   #     # #     #  #####  #     # ###       #####  ####### ####### #     # #    # 
-====================================================================================================================
-                                              v3.3 - ULTIMATE EDITION PLUS
-====================================================================================================================
 
-   BACKUP: Ponto de Restauracao, Drivers e Registro[1]
-   LIMPEZA: Temporarios, Lixeira, Logs de Eventos e WinSxS[2]
- [2B] LIMPEZA AGRESSIVA: Prefetch, Minidumps e Caches Profundos
-   REPARO: SFC Scannow, DISM e Verificacao de Disco[3]
-   PRIVACIDADE: Bloquear Telemetria e Rastreamento MS[4]
-   GAMER MODE: Otimizar Servicos e Plano de Energia[5]
-   DEBLOAT: Remover Apps Inuteis (Menu de Intensidade)[6]
-   INSTALADOR: Menu de Escolha de Softwares (Winget)[7]
- [7B] ATUALIZAR APPS: Winget Upgrade All
-   REDE: Resetar Cache DNS e Pilha TCP/IP[8]
-   SISTEMA: Ver Chave, Saude do Disco e Bateria[9]
-  MANUTENCAO: Backup de Perfil e Limpeza de Inicializacao[10]
-  LOGS: Ver historico de operacoes do Whaomi[11]
 
-   Sair
+---
+
+## 📥 Guia de Instalação
+
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/96/download.png" width="64"/>
+
+### 1️⃣ Download
+Baixe o arquivo `.bat` na aba [Releases](https://github.com/whaomiroot-creator/whaomi-clean/releases)
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/96/admin-settings-male.png" width="64"/>
+
+### 2️⃣ Executar
+Clique com botão direito > **Executar como Administrador**
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/96/security-checked.png" width="64"/>
+
+### 3️⃣ Backup
+Use a opção **[1] BACKUP** antes de qualquer operação
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/96/checkmark.png" width="64"/>
+
+### 4️⃣ Otimizar
+Escolha as categorias desejadas no menu
+</td>
+</tr>
+</table>
+
+> [!IMPORTANT]
+> **Privilégios de Administrador são obrigatórios** para que o script funcione corretamente.
+
+> [!TIP]
+> O script verifica automaticamente por atualizações a cada inicialização.
+
+---
+
+## 🔐 Requisitos do Sistema
+
+| Item | Especificação |
+|:-----|:-------------|
+| **Sistema Operacional** | Windows 10 (Build 1809+) ou Windows 11 |
+| **Privilégios** | Administrador *(obrigatório)* |
+| **PowerShell** | 5.1+ *(incluído no Windows)* |
+| **Winget** | Opcional *(somente para categorias 7 e 7B)* |
+
+---
+
+## ⚠️ Aviso Legal
+
+> [!WARNING]
+> Este software é **100% open-source** e utiliza apenas comandos nativos do Windows.
+> 
+> O autor **não se responsabiliza** por eventuais danos. Recomendamos **fortemente** utilizar a função **BACKUP [1]** antes de qualquer operação.
+
+**O script NÃO:**
+- ❌ Coleta dados do usuário
+- ❌ Envia informações para servidores externos
+- ❌ Instala malware ou adware
+- ❌ Modifica o sistema sem aviso
+
+---
+
+## ☕ Apoie o Desenvolvimento
+
+<div align="center">
+
+### **Gostou do projeto? Me pague um café!** ☕
+
+Se o Whaomi-Clean te ajudou, considere fazer uma doação via **PIX**:
+
+📱 Chave PIX (UUID)
+cefc4314-c221-4875-ad34-18c1033eaa4e
+
+
+**Sua contribuição mantém o projeto ativo!** ❤️
+
+[![Star History](https://img.shields.io/github/stars/whaomiroot-creator/whaomi-clean?style=social)](https://github.com/whaomiroot-creator/whaomi-clean/stargazers)
+
+</div>
+
+---
+
+## 🤝 Como Contribuir
+
+Sua participação é essencial para o crescimento do projeto!
+
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/64/star.png"/>
+
+### ⭐ Star
+Dê uma estrela no repositório
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/64/bug.png"/>
+
+### 🐛 Issues
+Reporte bugs e problemas
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/64/code.png"/>
+
+### 💻 Pull Request
+Envie melhorias no código
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/64/share.png"/>
+
+### 📢 Compartilhe
+Divulgue para seus amigos
+</td>
+</tr>
+</table>
+
+---
+
+## 📞 Suporte & Contato
+
+<div align="center">
+
+| Canal | Link |
+|:------|:-----|
+| 📧 **Email** | [whaomiroot@gmail.com](mailto:whaomiroot@gmail.com) |
+| 💬 **Discussões** | [GitHub Discussions](https://github.com/whaomiroot-creator/whaomi-clean/discussions) |
+| 🐛 **Bugs** | [GitHub Issues](https://github.com/whaomiroot-creator/whaomi-clean/issues) |
+
+</div>
+
+---
+
+## 📜 Changelog
+
+### 🎉 v3.3 - Ultimate Edition Plus *(Fevereiro 2026)*
+- ✨ Nova animação de inicialização profissional
+- 📊 Barra de progresso visual (0-100%)
+- 🎨 Logo ASCII moderno
+- 🔄 Sistema de auto-update aprimorado
+- 📝 Logs automáticos com timestamp
+- 🎯 Interface redesenhada
+- ⚡ Otimizações de performance
+
+### v3.2 *(Janeiro 2026)*
+- Adição do menu DEBLOAT (3 níveis)
+- Integração completa com Winget
+- Modo Gamer otimizado
+
+### v3.1 *(Dezembro 2025)*
+- Primeira versão Ultimate Edition
+- Sistema de logs implementado
+- Menu Hardware expandido
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License** - consulte o arquivo [LICENSE](LICENSE) para detalhes.
+
+---
+
+<div align="center">
+
+### Desenvolvido com ❤️ por [whaomiroot-creator](https://github.com/whaomiroot-creator)
+
+**Foco em Performance • Segurança • Privacidade**
+
+📅 **Versão 3.3** - Fevereiro 2026
+
+---
+
+[![GitHub Stars](https://img.shields.io/github/stars/whaomiroot-creator/whaomi-clean?style=for-the-badge&logo=github)](https://github.com/whaomiroot-creator/whaomi-clean/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/whaomiroot-creator/whaomi-clean?style=for-the-badge&logo=github)](https://github.com/whaomiroot-creator/whaomi-clean/network)
+[![GitHub Issues](https://img.shields.io/github/issues/whaomiroot-creator/whaomi-clean?style=for-the-badge&logo=github)](https://github.com/whaomiroot-creator/whaomi-clean/issues)
+
+**Se este projeto te ajudou, considere dar uma ⭐!**
+
+</div>
+
+
